@@ -1,0 +1,7 @@
+﻿hoja,regla,motivo,filas
+m100,M100-2,Hogar sin POBREZA en Sumaria; resultado de la encuesta: Ausente,294
+m100,M100-2,Hogar sin POBREZA en Sumaria; resultado de la encuesta: Rechazo,1586
+m100,M100-2,Hogar sin POBREZA en Sumaria; resultado de la encuesta: Vivienda desocupada,3041
+m100,M100-2,Hogar sin POBREZA en Sumaria; resultado de la encuesta: código 7 (no figura en el diccionario),5976
+m200,M200-3,No es miembro del hogar (P204 distinto de 1 o vacío),7799
+m300,M300-3,"No es miembro del hogar según el módulo 200 (ausente, trabajador del hogar o pensionista)",430

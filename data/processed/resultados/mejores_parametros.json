@@ -1,0 +1,19 @@
+{
+  "Regresión logística": {
+    "C": 1
+  },
+  "Árbol de decisión": {
+    "max_depth": 10,
+    "min_samples_leaf": 100
+  },
+  "KNN": {
+    "n_neighbors": 101,
+    "weights": "uniform"
+  },
+  "MLP": {
+    "alpha": 0.01,
+    "hidden_layer_sizes": [
+      32
+    ]
+  }
+}

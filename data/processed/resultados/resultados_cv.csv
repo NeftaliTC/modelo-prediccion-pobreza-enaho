@@ -1,0 +1,5 @@
+﻿modelo,mejores_parametros,sensibilidad_al_30pct_cv_media,sensibilidad_al_30pct_cv_desv
+Regresión logística,"{""C"": 1}",0.7129373122808195,0.008078407946488859
+Árbol de decisión,"{""max_depth"": 10, ""min_samples_leaf"": 100}",0.659298077084417,0.008577309765005281
+KNN,"{""n_neighbors"": 101, ""weights"": ""uniform""}",0.6762907528902462,0.005059991983157879
+MLP,"{""alpha"": 0.01, ""hidden_layer_sizes"": [32]}",0.7106871990200849,0.002559316949750934

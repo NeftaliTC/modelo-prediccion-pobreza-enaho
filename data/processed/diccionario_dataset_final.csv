@@ -1,0 +1,81 @@
+﻿posicion,variable,grupo,tipo,origen,significado,codigos_o_valores,construccion,vacios_pct
+1,id_hogar,identificador,texto,sumaria,CONGLOME + VIVIENDA + HOGAR (texto con ceros),,CONGLOME + VIVIENDA + HOGAR (texto con ceros),0.0
+2,conglome,identificador,texto,sumaria,Conglomerado: se usa para dividir entrenamiento/prueba por grupos,,Conglomerado: se usa para dividir entrenamiento/prueba por grupos,0.0
+3,ubigeo,identificador,texto,sumaria,Código de ubicación (6 dígitos),,Código de ubicación (6 dígitos),0.0
+4,factor07,ponderacion,numérica / código,sumaria,"Factor de expansión, convertido a número (coma decimal)",,"Factor de expansión, convertido a número (coma decimal)",0.0
+5,pobreza_cod,objetivo,numérica / código,sumaria,Condición de pobreza (INEI),1 = Pobre extremo; 2 = Pobre no extremo; 3 = No pobre,"POBREZA original: 1 pobre extremo, 2 pobre no extremo, 3 no pobre",0.0
+6,y,objetivo,binaria (0/1),sumaria,1 si POBREZA es 1 o 2; 0 si es 3,,1 si POBREZA es 1 o 2; 0 si es 3,0.0
+7,y_extremo,objetivo,binaria (0/1),sumaria,1 si POBREZA = 1 (robustez),,1 si POBREZA = 1 (robustez),0.0
+8,y_pobre_o_vulnerable,objetivo,binaria (0/1),sumaria,"1 si POBREZAV es 1, 2 o 3 (robustez)",,"1 si POBREZAV es 1, 2 o 3 (robustez)",0.0
+9,departamento,solo_analisis,texto,sumaria,Primeros 2 dígitos de UBIGEO,,Primeros 2 dígitos de UBIGEO,0.0
+10,dominio,solo_analisis,numérica / código,sumaria,DOMINIO original,,DOMINIO original,0.0
+11,estrato,solo_analisis,numérica / código,sumaria,ESTRATO original (tamaño de centro poblado),,ESTRATO original (tamaño de centro poblado),0.0
+12,recibe_juntos,solo_analisis,binaria (0/1),sumaria,1 si INGTPU01 > 0 (transferencia: no se usa como predictor),,1 si INGTPU01 > 0 (transferencia: no se usa como predictor),0.0
+13,recibe_pension65,solo_analisis,binaria (0/1),sumaria,1 si INGTPU03 > 0 (transferencia: no se usa como predictor),,1 si INGTPU03 > 0 (transferencia: no se usa como predictor),0.0
+14,jefe_lengua_materna,solo_analisis,numérica / código,m300 + m200,Idioma o lengua materna que aprendió en su niñez el jefe(a) (P300A),1 Quechua; 2 Aimara; 3 Otra lengua nativa; 4 Castellano; 6 Portugués; 7 Otra lengua extranjera; 8 No escucha/no habla; 9 Lengua de señas peruanas; 10 Ashaninka; 11 Awajún; 12 Shipibo-Konibo; 13 Shawi; 14 Matsigenka; 15 Achuar,P300A del jefe(a),0.04
+15,jefe_lengua_indigena,solo_analisis,binaria (0/1),m300 + m200,"1 si la lengua materna del jefe(a) es indígena (códigos 1, 2, 3, 10 a 15)",,"1 si la lengua materna del jefe(a) es indígena (códigos 1, 2, 3, 10 a 15)",0.04
+16,mieperho,predictor,numérica,sumaria,Miembros del hogar (definición INEI),,Miembros del hogar (definición INEI),0.0
+17,p104,predictor,numérica,m100,"¿Cuántas habitaciones en total tiene la vivienda, sin contar el baño,la cocina, los pasadizos, ni el garage?",99 = Missing Value,numérica | 99 -> vacío,1.09
+18,p104a,predictor,numérica,m100,¿Cuántas habitaciones se usan para exclusivamente para dormir?,99 = Missing Value,numérica | 99 -> vacío,1.09
+19,n_menores_5,predictor,numérica,m200,Personas menores de 5 años,,Personas menores de 5 años,0.0
+20,n_ninos_6_17,predictor,numérica,m200,Personas de 6 a 17 años,,Personas de 6 a 17 años,0.0
+21,n_adultos_18_mas,predictor,numérica,m200,Personas de 18 años o más,,Personas de 18 años o más,0.0
+22,n_mayores_65,predictor,numérica,m200,Personas de 65 años o más,,Personas de 65 años o más,0.0
+23,prop_dependientes,predictor,numérica,m200,Proporción de menores de 15 y mayores de 64,,Proporción de menores de 15 y mayores de 64,0.0
+24,prop_mujeres,predictor,numérica,m200,Proporción de mujeres,,Proporción de mujeres,0.0
+25,edad_media,predictor,numérica,m200,Edad media de los miembros,,Edad media de los miembros,0.0
+26,jefe_edad,predictor,numérica,m200,Edad del jefe(a),,Edad del jefe(a),0.0
+27,edu_max_adultos,predictor,numérica,m300 + m200,"Máximo nivel educativo (P301A, 1 a 11) entre miembros de 15 años o más",,"Máximo nivel educativo (P301A, 1 a 11) entre miembros de 15 años o más",0.01
+28,prop_adultos_prim_inc,predictor,numérica,m300 + m200,Proporción de adultos (15+) con hasta primaria incompleta (nivel <= 3),,Proporción de adultos (15+) con hasta primaria incompleta (nivel <= 3),0.01
+29,n_adultos_no_leen,predictor,numérica,m300 + m200,Adultos (15+) que no saben leer ni escribir (P302 = 2); 0 si no hay,,Adultos (15+) que no saben leer ni escribir (P302 = 2); 0 si no hay,0.0
+30,n_ninos_6_17_no_asisten,predictor,numérica,m300 + m200,Personas de 6 a 17 años que no asisten a la escuela (P307 = 2); 0 si no hay,,Personas de 6 a 17 años que no asisten a la escuela (P307 = 2); 0 si no hay,0.0
+31,prop_usa_internet,predictor,numérica,m300 + m200,Proporción de miembros que usó internet el mes anterior (P314A); vacío si no se preguntó,,Proporción de miembros que usó internet el mes anterior (P314A); vacío si no se preguntó,0.01
+32,jefe_nivel_edu,predictor,numérica,m300 + m200,"Nivel educativo del jefe(a) (P301A, 1 a 11)",,"Nivel educativo del jefe(a) (P301A, 1 a 11)",0.04
+33,personas_por_dormitorio,predictor,numérica,sumaria + m100,"MIEPERHO / max(P104A, 1); vacío solo si P104A falta",,"MIEPERHO / max(P104A, 1); vacío solo si P104A falta",1.09
+34,personas_por_habitacion,predictor,numérica,sumaria + m100,MIEPERHO / P104 (vacío si P104 = 0 o falta),,MIEPERHO / P104 (vacío si P104 = 0 o falta),1.09
+35,area_urbana,predictor,binaria (0/1),sumaria,1 si ESTRATO <= 5,,1 si ESTRATO <= 5,0.0
+36,p25_1,predictor,binaria (0/1),m100,"La calle, avenida,jirón, carretera, donde se ubica la vivienda tiene: Pista afaltada",0 = Pase; 1 = Pista asfaltada,binaria (0/1),0.0
+37,p25_2,predictor,binaria (0/1),m100,"La calle, avenida,jirón, carretera, donde se ubica la vivienda tiene: Pista afirmada/tierra",0 = Pase; 1 = Pista afirmada/tierra,binaria (0/1),0.0
+38,p25_3,predictor,binaria (0/1),m100,"La calle, avenida,jirón, carretera, donde se ubica la vivienda tiene: Veredas",0 = Pase; 1 = Veredas,binaria (0/1),0.0
+39,p25_4,predictor,binaria (0/1),m100,"La calle, avenida,jirón, carretera, donde se ubica la vivienda tiene: Poste alumbrado público",0 = Pase; 1 = Poste alumbrado público,binaria (0/1),0.0
+40,p25_5,predictor,binaria (0/1),m100,"La calle, avenida,jirón, carretera, donde se ubica la vivienda tiene: Ninguno",0 = Pase; 1 = Ninguno,binaria (0/1),0.0
+41,p1121,predictor,binaria (0/1),m100,Tipo de alumbrado del hogar: Electricidad,0 = Pase; 1 = Electricidad,binaria (0/1),0.0
+42,p1123,predictor,binaria (0/1),m100,Tipo de alumbrado del hogar: Petróleo/Gas (lámpara),0 = Pase; 1 = Petróleo/gas(Lámpara),binaria (0/1),0.0
+43,p1124,predictor,binaria (0/1),m100,Tipo de alumbrado del hogar: Vela,0 = Pase; 1 = Vela,binaria (0/1),0.0
+44,p1125,predictor,binaria (0/1),m100,Tipo de alumbrado del hogar: Generador,0 = Pase; 1 = Generador,binaria (0/1),0.0
+45,p1126,predictor,binaria (0/1),m100,Tipo de alumbrado del hogar: Otro,0 = Pase; 1 = Otro,binaria (0/1),0.0
+46,p1127,predictor,binaria (0/1),m100,No utiliza alumbrado en el hogar,0 = Pase; 1 = No utiliza alumbrado en el hogar,binaria (0/1),0.0
+47,p1131,predictor,binaria (0/1),m100,Combustible que usan en el hogar para cocinar sus alimentos: Electricidad,0 = Pase; 1 = Electricidad,binaria (0/1),0.0
+48,p1132,predictor,binaria (0/1),m100,Combustible que usan en el hogar para cocinar sus alimentos: Gas (balón GLP),0 = Pase; 1 = Gas (Balón GLP),binaria (0/1),0.0
+49,p1133,predictor,binaria (0/1),m100,Combustible que usan en el hogar para cocinar sus alimentos: Gas Natural (Sistema de tuberías),0 = Pase; 1 = Gas Natural (sistema de tuberías),binaria (0/1),0.0
+50,p1135,predictor,binaria (0/1),m100,Combustible que usan en el hogar para cocinar sus alimentos: Carbón,0 = Pase; 1 = Carbón,binaria (0/1),0.0
+51,p1136,predictor,binaria (0/1),m100,Combustible que usan en el hogar para cocinar sus alimentos: Leña,0 = Pase; 1 = Leña,binaria (0/1),0.0
+52,p1139,predictor,binaria (0/1),m100,"Combustible que usan en el hogar para cocinar sus alimentos: Bosta, estiércol","0 = Pase; 1 = Bosta, estiércol",binaria (0/1),0.0
+53,p1137,predictor,binaria (0/1),m100,Combustible que usan en el hogar para cocinar sus alimentos: Otro,"0 = Pase; 1 = Otro (Residuos agrícolas, etc).",binaria (0/1),0.0
+54,p1138,predictor,binaria (0/1),m100,No cocinan,0 = Pase; 1 = No cocinan,binaria (0/1),0.0
+55,p1141,predictor,binaria (0/1),m100,Su hogar tiene: ¿Teléfono (fijo)?,0 = Pase; 1 = Teléfono(fijo),binaria (0/1),0.0
+56,p1142,predictor,binaria (0/1),m100,Su hogar tiene: ¿Teléfono Celular?,0 = Pase; 1 = Teléfono Celular,binaria (0/1),0.0
+57,p1143,predictor,binaria (0/1),m100,Su hogar tiene: ¿Conexión a TV por cable o satelital?,0 = Pase; 1 = Conexión a TV por cable o satelital,binaria (0/1),0.0
+58,p1144,predictor,binaria (0/1),m100,Su hogar tiene: ¿Conexión a Internet(fijo/Móvil)?,0 = Pase; 1 = Conexión a Internet(fijo/móvil),binaria (0/1),0.0
+59,p114b1,predictor,binaria (0/1),m100,"Conexión a internet a través de: Conexión fija (solo si el hogar tiene internet, P1144 = 1)",0 = No aplica; 1 = Conexión fija,"binaria (0/1) | 0 = no aplica (hogar sin internet, P1144 = 0)",0.0
+60,p114b2,predictor,binaria (0/1),m100,"Conexión a internet a través de: Conexión móvil pospago/control (solo si el hogar tiene internet, P1144 = 1)",0 = No aplica; 1 = Conexión móvil pospago/control,"binaria (0/1) | 0 = no aplica (hogar sin internet, P1144 = 0)",0.0
+61,p114b3,predictor,binaria (0/1),m100,"Conexión a internet a través de: Conexión móvil prepago (solo si el hogar tiene internet, P1144 = 1)",0 = No aplica; 1 = Conexión móvil prepago,"binaria (0/1) | 0 = no aplica (hogar sin internet, P1144 = 0)",0.0
+62,p1145,predictor,binaria (0/1),m100,"El hogar no tiene: Teléfono fijo, celular, TV cable, Internet",0 = Pase; 1 = No tiene,binaria (0/1),0.0
+63,p1146,predictor,binaria (0/1),m100,Su hogar tiene: ¿Televisión Digital Terrestre?,0 = Pase; 1 = Televisión Digital Terrestre,binaria (0/1),0.0
+64,jefe_mujer,predictor,binaria (0/1),m200,1 si el jefe(a) es mujer,,1 si el jefe(a) es mujer,0.0
+65,sin_dormitorio,predictor,binaria (0/1),m100,1 si P104A = 0 (el hogar no tiene dormitorios),,1 si P104A = 0 (el hogar no tiene dormitorios),1.09
+66,p24a,predictor,categórica (código),m100,Las paredes exteriores de la vivienda tienen fachada: Con tarrajeo,1 = Total; 2 = Parcial; 3 = No está tarrajeada; 4 = No corresponde; 9 = Missing Value,categórica (código) | 9 -> vacío,0.0
+67,p24b,predictor,categórica (código),m100,Las paredes exteriores de la vivienda tienen fachada: Pintada,1 = Totalmente; 2 = Parcialmente; 3 = Sin pintar; 9 = Missing Value,categórica (código) | 9 -> vacío,0.0
+68,p101,predictor,categórica (código),m100,Tipo de vivienda,"1 = Casa independiente; 2 = Departamento en edificio; 3 = Vivienda en quinta; 4 = Vivienda en casa de vecindad (Callejón, solar o corralón); 5 = Choza o cabaña; 6 = Vivienda improvisada; 7 = Local no destinado para habitación humana; 8 = Otro",categórica (código),1.09
+69,p102,predictor,categórica (código),m100,El material predominante en las paredes exteriores es:,"1 = Ladrillo o bloque de cemento; 2 = Piedra o sillar con cal o cemento; 3 = Adobe; 4 = Tapia; 5 = Quincha (caña con barro); 6 = Piedra con barro; 7 = Madera (pona, tornillo, etc); 8 = Triplay/calamina/estera; 9 = Otro material",categórica (código),1.09
+70,p103,predictor,categórica (código),m100,El material predominante en los pisos es:,"1 = Parquet o madera pulida; 2 = Láminas asfálticas, vinílicos o similares; 3 = Losetas, terrazos o similares; 4 = Madera (pona, tornillo, etc); 5 = Cemento; 6 = Tierra; 7 = Otro material",categórica (código),1.09
+71,p103a,predictor,categórica (código),m100,El material predominante en los techos es:,"1 = Concreto armado; 2 = Madera; 3 = Tejas; 4 = Planchas de calamina, fibra de cemento o similares; 5 = Caña o estera con torta de barro o cemento; 6 = Triplay/estera/carrizo; 7 = Paja, hojas de palmera; 8 = Otro material",categórica (código),1.09
+72,p105a,predictor,categórica (código),m100,La vivienda que ocupa su hogar es:,"1 = Alquilada; 2 = Propia, totalmente pagada; 3 = Propia, por invasión; 4 = Propia, comprándola a plazos; 5 = Cedida por el centro de trabajo; 6 = Cedida por otro hogar o institución; 7 = Otra forma; 9 = Missing Value",categórica (código) | 9 -> vacío,0.0
+73,p106a,predictor,categórica (código),m100,¿Esta vivienda tiene título de propiedad?,1 = Si; 2 = No; 3 = En trámite de titulación; 9 = Missing value,categórica (código) | 9 -> vacío | 0 = no aplica (salto de preguntas),0.01
+74,p106b,predictor,categórica (código),m100,¿El título de la vivienda está Registrado en la SUNARP?,1 = Si; 2 = No; 9 = Missing value,categórica (código) | 9 -> vacío | 0 = no aplica (salto de preguntas),0.01
+75,p110c,predictor,categórica (código),m100,El hogar tiene acceso al servicio de agua todos los días de la semana,1 = Si; 2 = No; 9 = Missing value,categórica (código) | 9 -> vacío,13.6
+76,p112a,predictor,categórica (código),m100,El servicio eléctrico de su hogar es:,1 = Con medidor de uso exclusivo para la vivienda; 2 = Con medidor de uso colectivo (Para varias viviendas); 3 = Otro,categórica (código),6.25
+77,p113a,predictor,categórica (código),m100,Combustible que usan en el hogar para cocinar: Mayor Frecuencia,1 = Electricidad; 2 = Gas (Balón GLP); 3 = Gas Natural (sistema de tuberias); 5 = Carbón; 6 = Leña; 7 = Otro; 8 = No cocinan,categórica (código),2.06
+78,t110,predictor,categórica (código),m100,(Re-codificado ) El abastecimiento de agua en su hogar procede de:,"1 = Red pública, dentro de la vivienda; 2 = Red pública, fuera de la vivienda pero dentro del edificio; 3 = Pilón o pileta de uso público; 4 = Camión - cisterna u otro similar; 5 = Pozo (agua subterránea); 6 = Manantial o puquio; 7 = Otra; 8 = Río, acequia, lago, laguna; 9 = Agua potable del vecino",categórica (código),0.0
+79,t111a,predictor,categórica (código),m100,Recodificada El baño o servicio higiénico que tiene su hogar,"1 = Red pública de desagüe dentro de la vivienda; 2 = Red pública de desagüe fuera de la vivienda pero dentro del edificio; 3 = Letrina (Con tratamiento); 4 = Pozo séptico, tanque séptico o biodigestor; 5 = Pozo ciego o negro; 6 = Río, acequia, canal o similar; 7 = Otra; 9 = Campo abierto o al aire libre; 10 = Letrina (Sin tratamiento); 11 = Letrina (Tipo compostera)",categórica (código),0.0
+80,jefe_estado_civil,predictor,categórica (código),m200,Estado civil o conyugal del jefe(a) (P209),Código P209 del diccionario ENAHO,P209 del jefe(a) (categoría),0.0

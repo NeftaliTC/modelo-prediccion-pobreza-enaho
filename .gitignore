@@ -1,0 +1,34 @@
+
+data/interim/**
+!data/interim/.gitkeep
+
+# Archivos ENAHO grandes que se compartirán mediante enlaces externos
+data/raw/Datos.xlsx
+data/raw/Enaho01A-2025-300.csv
+data/processed/tablas_limpias/m300.pkl
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+*.local
+.vscode/
+.idea/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
